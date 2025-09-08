@@ -16,7 +16,7 @@
   <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
   <!-- stylesheet -->
   <link rel="stylesheet" href="./style/style.css">
-  <!-- <style>
+  <style>
     * {
       border: 1px solid darkblue;
     }
@@ -24,7 +24,7 @@
     body {
       border: 2px darkmagenta dashed;
     }
-  </style> -->
+  </style>
 </head>
 
 <body>
@@ -66,6 +66,10 @@
               Trees</button>
             <div id="plant_categories" class="space-y-2">
 
+              <div id="spinner76" class="text-center">
+                <span class="loading loading-xl loading-spinner text-success"></span>
+              </div>
+
             </div>
           </div>
         </div>
@@ -88,7 +92,7 @@
           </div>
           <div class="flex font-medium justify-between">
             <h1>Total:</h1>
-            <h3>৳ <span id="balance">1</span></h3>
+            <h3>৳ <span id="balance">0</span></h3>
           </div>
         </div>
     </section>
@@ -166,9 +170,10 @@
         </div>
       </div>
     </dialog>
-
   </main>
-
+  <footer class="footer footer-horizontal footer-center bg-[#14532d] text-base-content p-4 md:p-6">
+    <h1 class="text-white">© 2025 Green Earth. All Rights Reserved.</h1>
+  </footer>
   <script src="./Javascript/script.js"></script>
 </body>
 
