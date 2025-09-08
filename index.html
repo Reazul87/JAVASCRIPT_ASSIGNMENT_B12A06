@@ -51,6 +51,7 @@
     </section>
   </header>
   <main class=" bg-[#F0FDF4]">
+
     <!-- about campaign -->
     <section class="w-10/12 md:w-9/12 mx-auto py-12 md:py-24">
       <h1 class="text-xl md:text-2xl font-semibold text-center mb-7 md:mb-10">About the Campaign</h1>
@@ -111,7 +112,23 @@
         </div>
       </div>
     </section>
+    <!-- modal -->
+    <!-- Open the modal using ID.showModal() method -->
+    <dialog id="my_modal" class="modal modal-middle sm:modal-middle">
+      <div class="modal-box">
+        <div id="modal_container" class="h-fit">
+
+        </div>
+        <div class="modal-action">
+          <form method="dialog">
+            <button class="btn cursor-pointer hover:bg-sky-600 hover:font-medium hover:text-violet-200">Close</button>
+          </form>
+        </div>
+      </div>
+    </dialog>
+
   </main>
+
   <script src="./Javascript/script.js"></script>
 </body>
 
