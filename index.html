@@ -16,7 +16,7 @@
   <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
   <!-- stylesheet -->
   <link rel="stylesheet" href="./style/style.css">
-  <style>
+  <!-- <style>
     * {
       border: 1px solid darkblue;
     }
@@ -24,7 +24,7 @@
     body {
       border: 2px darkmagenta dashed;
     }
-  </style>
+  </style> -->
 </head>
 
 <body>
@@ -51,7 +51,47 @@
     </section>
   </header>
   <main class=" bg-[#F0FDF4]">
+    <!-- active -->
+    <section id="eventDelegate" class="mt-24">
+      <h1 class="text-center mb-10 font-semibold text-2xl md:text-3xl">Choose Your Trees</h1>
 
+
+      <div class="grid w-11/12 mx-auto md:grid-cols-12 grid-cols-2 md:gap-5 gap-3">
+        <div class="md:col-span-2 order-1">
+          <h1 class="text-xl font-semibold mb-5">Categories</h1>
+          <div class="space-y-2">
+            <button clicked onclick="load_Carts()" id="highlightCategory" type="button"
+              onclick="categories_Carts('${category.id}')"
+              class="active btn btn-sm w-full btn-ghost px-4 py-2 cursor-pointer hover:bg-sky-600 hover:font-medium hover:text-violet-200">All
+              Trees</button>
+            <div id="plant_categories" class="space-y-2">
+
+            </div>
+          </div>
+        </div>
+        <div id="plant_carts"
+          class="md:col-span-8 col-span-2 grid grid-cols-2 md:grid-cols-3 gap-2.5 order-3 md:order-2">
+          <!-- loading -->
+          <div id="spinner" class="md:col-span-8 col-span-2 m-auto">
+            <span class="loading loading-xl loading-spinner text-success"></span>
+          </div>
+
+        </div>
+        <div class="md:col-span-2 space-y-2 rounded-2xl p-1 bg-[#FFFFFF] md:order-3 order-2">
+          <h1 class="text-xl font-semibold">Your Cart</h1>
+          <div id="button_cart" class="p-0.5 space-y-2">
+
+            <div id="spinner" class="text-center hidden">
+              <span class="loading loading-xl loading-spinner text-success"></span>
+            </div>
+
+          </div>
+          <div class="flex font-medium justify-between">
+            <h1>Total:</h1>
+            <h3>৳ <span id="balance">1</span></h3>
+          </div>
+        </div>
+    </section>
     <!-- about campaign -->
     <section class="w-10/12 md:w-9/12 mx-auto py-12 md:py-24">
       <h1 class="text-xl md:text-2xl font-semibold text-center mb-7 md:mb-10">About the Campaign</h1>
@@ -116,10 +156,10 @@
     <!-- Open the modal using ID.showModal() method -->
     <dialog id="my_modal" class="modal modal-middle sm:modal-middle">
       <div class="modal-box">
-        <div id="modal_container" class="h-fit">
+        <div id="modal_container" class="h-fit md:w-full w-3/4 m-auto">
 
         </div>
-        <div class="modal-action">
+        <div class="modal-action md:w-full w-3/4 m-auto">
           <form method="dialog">
             <button class="btn cursor-pointer hover:bg-sky-600 hover:font-medium hover:text-violet-200">Close</button>
           </form>
