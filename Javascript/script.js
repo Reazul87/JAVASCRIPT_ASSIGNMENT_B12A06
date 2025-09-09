@@ -186,3 +186,20 @@ document.getElementById("eventDelegate").addEventListener("click", function (e) 
       buttonCart.appendChild(childForBuy);
     }
   });
+
+document.getElementById("eventDelegate").addEventListener("click", function (e) {
+    if (e.target.id.includes("close")) {
+      const closeButton = e.target;
+      const cartParentDelete = closeButton.parentNode.parentNode.parentNode;
+      // console.log(cartParentDelete);
+      const cartPriceDelete =closeButton.parentNode.parentNode.childNodes[1].childNodes[3].childNodes[1].innerText;
+      const deletePrice = Number(cartPriceDelete);
+      const totalPrice =closeButton.parentNode.parentNode.parentNode.parentNode.parentNode.childNodes[5].childNodes[3].childNodes[1].innerText;
+      const cartDeletePrice = Number(totalPrice);
+      cartParentDelete.innerHTML = "";
+
+      const afterDeleteCart = cartDeletePrice - deletePrice;
+      // console.log(afterDeleteCart);
+      document.getElementById("balance").innerText = afterDeleteCart.toFixed(2);
+    }
+  });
