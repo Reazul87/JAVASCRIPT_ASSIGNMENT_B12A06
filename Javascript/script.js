@@ -148,3 +148,41 @@ const displayPlantsDetails = (Details) => {
             </div>`;
   document.getElementById("my_modal").showModal();
 };
+
+document.getElementById("eventDelegate").addEventListener("click", function (e) {
+    if (e.target.className.includes("click")) {
+      const addCart = e.target;
+      const cartName = addCart.parentNode.childNodes[3].childNodes[1].innerText;
+      const cartPrice =addCart.parentNode.childNodes[3].childNodes[5].childNodes[3].childNodes[1].innerText;
+      const price = Number(cartPrice);
+
+      const totalPrice =addCart.parentNode.parentNode.parentNode.parentNode.childNodes[5].childNodes[5].childNodes[3].childNodes[1].innerText;
+      const cartAddPrice = Number(totalPrice);
+
+      const addedPrice = price + cartAddPrice;
+      document.getElementById("balance").innerText = addedPrice.toFixed(2);
+
+      const dynamic = {
+        name: cartName,
+        price: cartPrice,
+      };
+
+      alert(
+        `You Selected Item is ${dynamic.name}. Selected Item Price - ৳ ${dynamic.price}.`
+      );
+
+      const buttonCart = document.getElementById("button_cart");
+      const childForBuy = document.createElement("div");
+      childForBuy.innerHTML = `
+          <div class="bg-[#F0FDF4]  rounded-lg flex justify-between items-center p-2">
+              <div>
+                <h1 class="sameName font-semibold text-sm">${dynamic.name}</h1>
+                <h3 class="text-[#8C8C8C]">৳ <span>${dynamic.price}</span> x <span id="quantity">1</span></h3>
+              </div>
+              <div class=""><i id="close" class="fa-solid fa-xmark text-[#8C8C8C] hover:text-lg hover:text-green-300 active:text-[#b404b4f6]"></i></div>
+            </div>
+          </div>`;
+      // console.log(plant);
+      buttonCart.appendChild(childForBuy);
+    }
+  });
