@@ -25,3 +25,55 @@ const displayCategories = (categories) => {
 };
 
 loadingCategories();
+
+const activeDelete = () => {
+  const category_button = document.querySelectorAll(".Category");
+  // console.log(category_button);
+  category_button.forEach((category) => category.classList.remove("active"));
+};
+
+const categories_Carts = (id) => {
+  const parentForCategory = document.getElementById("plant_carts");
+  parentForCategory.innerHTML = `<div id="spinner" class="md:col-span-8 col-span-2 m-auto">
+      <span class="loading loading-xl loading-spinner text-success"></span>
+    </div>`;
+  const url = `https://openapi.programming-hero.com/api/category/${id}`;
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+      activeDelete();
+      const clickedButton = document.getElementById(`highlightCategory-${id}`);
+      clickedButton.classList.add("active");
+      displayCategoryPlants(data.plants);
+    });
+};
+
+// displayCategoryPlants
+
+const displayCategoryPlants = (plantsOfCategory) => {
+  const parentForCategory = document.getElementById("plant_carts");
+  parentForCategory.innerHTML = "";
+
+  plantsOfCategory.forEach((plantOfCategory) => {
+    // console.log(plantOfCategory);
+    const plantCart = document.createElement("div");
+    plantCart.innerHTML = `<div class="flex flex-col border border-gray-100 rounded-2xl shadow p-4 h-full">
+      <img src="${plantOfCategory.image}" alt="Mango Tree" class="rounded-xl mb-4 h-48 w-full object-cover">
+      <div class="flex flex-col flex-grow">
+        <h3 onclick="LoadPlantsDetails('${plantOfCategory.id}')" class="text-lg font-semibold cursor-pointer">${plantOfCategory.name}</h3>
+        <p class="text-sm text-gray-600 mt-3 mb-auto">
+          ${plantOfCategory.description}
+        </p>
+        <div class="flex justify-between items-center my-3">
+          <span class="bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full">${plantOfCategory.category}</span>
+          <span class="font-bold">৳<span>${plantOfCategory.price}</span>
+        </div>
+      </div>
+      <button class="click bg-green-600 text-white rounded-2xl py-2 mt-auto cursor-pointer hover:bg-sky-600 active:text-[#b404b4f6] hover:font-medium hover:text-violet-200">
+        Add to Cart
+      </button>
+    </div>`;
+
+    parentForCategory.appendChild(plantCart);
+  });
+};
