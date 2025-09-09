@@ -122,3 +122,29 @@ const displayPlants = (plants) => {
 
 load_Carts();
 
+const LoadPlantsDetails = (id) => {
+  const url = `https://openapi.programming-hero.com/api/plant/${id}`;
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => displayPlantsDetails(data.plants));
+};
+
+// displayPlantsDetails
+
+const displayPlantsDetails = (Details) => {
+  const modalContainer = document.getElementById("modal_container");
+  modalContainer.innerHTML = `<div class="flex flex-col rounded-2xl shadow-sm p-4 h-full">
+                <h3 class="text-xl mb-2 font-semibold">${Details.name}</h3>
+                <img src="${Details.image}" alt="Mango Tree" class="rounded-xl mb-4 h-24 md:h-48 w-full object-cover">
+                <div class="flex flex-col flex-grow">
+                    <div>
+                        <span class="bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full">${Details.category}</span>
+                    </div>
+                    <div class="flex justify-between items-center mt-3 mb-1.5">
+                        <span class="font-bold">৳<span>${Details.price}</span>
+                            <p class="text-sm text-gray-600 mt-2">${Details.description}</p>
+                    </div>
+                </div>
+            </div>`;
+  document.getElementById("my_modal").showModal();
+};
