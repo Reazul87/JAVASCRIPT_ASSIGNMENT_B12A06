@@ -77,3 +77,48 @@ const displayCategoryPlants = (plantsOfCategory) => {
     parentForCategory.appendChild(plantCart);
   });
 };
+
+const load_Carts = () => {
+  const url = "https://openapi.programming-hero.com/api/plants";
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+      activeDelete();
+      const clickedButton = document.getElementById("highlightCategory");
+      clickedButton.classList.add("active");
+      displayPlants(data.plants);
+    });
+};
+
+// displayPlants
+
+const displayPlants = (plants) => {
+  const parentPlants = document.getElementById("plant_carts");
+  // console.log(parentPlants);
+  parentPlants.innerHTML = "";
+
+  plants.forEach((plant) => {
+    const childPlants = document.createElement("div");
+    childPlants.innerHTML = `<div class="flex flex-col border border-gray-100 rounded-2xl shadow p-4 h-full">
+      <img src="${plant.image}" alt="Mango Tree" class="rounded-xl mb-4 h-48 w-full object-cover">
+      <div class="flex flex-col flex-grow">
+        <h3 onclick="LoadPlantsDetails('${plant.id}')" class="text-lg font-semibold cursor-pointer">${plant.name}</h3>
+        <p class="text-sm text-gray-600 mt-3 mb-auto">
+          ${plant.description}
+        </p>
+        <div class="flex justify-between items-center my-3">
+          <span class="bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full">${plant.category}</span>
+          <span class="font-bold">৳<span>${plant.price}</span>
+        </div>
+      </div>
+      <button class="click bg-green-600 text-white rounded-2xl py-2 mt-auto cursor-pointer hover:bg-sky-600 active:text-[#b404b4f6] hover:font-medium hover:text-violet-200">
+        Add to Cart
+      </button>
+    </div>`;
+
+    parentPlants.appendChild(childPlants);
+  });
+};
+
+load_Carts();
+
