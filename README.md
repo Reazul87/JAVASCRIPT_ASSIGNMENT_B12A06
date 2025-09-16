@@ -1,11 +1,11 @@
 ## 🔗 Submission
 
-- 📂 **GitHub Private Repository: I did not get access** 
-- 📂 **GitHub Repository : https://github.com/Reazul87/JAVASCRIPT_ASSIGNMENT_B12A06 |**
-- 🌐 **Netlify Live Link : https://darling-buttercream-green-earth.netlify.app/ |**
-- 🌐 **Cloudflare Live Link : https://darling-buttercream-green-earth.pages.dev/ |**
-- 🌐 **Surge Live Link : https://darling-buttercream-green-earth.surge.sh/ |**
-- 🌐 **Live Link : https://reazul87.github.io/JAVASCRIPT_ASSIGNMENT_B12A06/ |**
+- 📂 **[GitHub Private Repository](https://classroom.github.com/assignment-invitations/7fea77bb22278201a93635792f96366d/status) : I did not get access** 
+- 📂 **[GitHub Repository](https://github.com/Reazul87/JAVASCRIPT_ASSIGNMENT_B12A06) : https://github.com/Reazul87/JAVASCRIPT_ASSIGNMENT_B12A06**
+- 🌐 **[Netlify Live Link](https://darling-buttercream-green-earth.netlify.app/) : https://darling-buttercream-green-earth.netlify.app/**
+- 🌐 **[Cloudflare Live Link](https://darling-buttercream-green-earth.pages.dev/) : https://darling-buttercream-green-earth.pages.dev/**
+- 🌐 **[Surge Live Link](https://darling-buttercream-green-earth.surge.sh/) : https://darling-buttercream-green-earth.surge.sh/**
+- 🌐 **[Live Link](https://reazul87.github.io/JAVASCRIPT_ASSIGNMENT_B12A06/) : https://reazul87.github.io/JAVASCRIPT_ASSIGNMENT_B12A06/**
 
 ==========================================================================
 ==========================================================================
